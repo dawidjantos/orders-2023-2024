@@ -2,4 +2,18 @@
 GET localhost:8080/products
 
 
-### Get product by ID
+### Get product by id
+GET http://localhost:8080/products/5f40cc2e-ff5e-4f30-a767-943b3a268e67
+
+### Create product
+POST http://localhost:8080/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "5f40cc2e-ff5e-4f30-a767-943b3a268e68",
+  "name": "Testowy produkt 3",
+  "price": 10,
+  "createdAt": "2024-04-21T14:01:33.658280500Z",
+  "updatedAt": "2024-04-21T14:01:33.658280500Z"
+}
