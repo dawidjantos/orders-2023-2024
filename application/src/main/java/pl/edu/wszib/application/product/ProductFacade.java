@@ -4,6 +4,8 @@ import pl.edu.wszib.api.product.ProductApi;
 import pl.edu.wszib.api.product.ProductFacadeApi;
 import pl.edu.wszib.api.product.ProductResult;
 
+import java.util.Collection;
+
 public class ProductFacade implements ProductFacadeApi {
     private final ProductRepository productRepository;
 
@@ -27,5 +29,10 @@ public class ProductFacade implements ProductFacadeApi {
         return productRepository.findById(id)
                 .map(ProductResult::success)
                 .orElseGet(() -> ProductResult.failure(ProductResult.Code.NOT_FUND, "Product with id = %s does not exists.".formatted(id)));
+    }
+
+    @Override
+    public Collection<ProductApi> getAll() {
+        return productRepository.findAll();
     }
 }

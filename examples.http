@@ -1,0 +1,5 @@
+### Get all products
+GET localhost:8080/products
+
+
+### Get product by ID

@@ -1,9 +1,10 @@
-package pl.edu.wszib.infrastructure.product;
+package pl.edu.wszib.application.product;
 
 import pl.edu.wszib.api.product.ProductApi;
-import pl.edu.wszib.application.product.ProductRepository;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 
 public class InMemoryProductRepository implements ProductRepository {
     private final Map<String, ProductApi> products = new HashMap<>();
@@ -22,10 +23,5 @@ public class InMemoryProductRepository implements ProductRepository {
     @Override
     public boolean existsById(String id) {
         return products.containsKey(id);
-    }
-
-    @Override
-    public Collection<ProductApi> findAll() {
-        return products.values();
     }
 }

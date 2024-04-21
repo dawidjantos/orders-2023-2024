@@ -3,7 +3,6 @@ package pl.edu.wszib.application.product;
 import org.junit.jupiter.api.Test;
 import pl.edu.wszib.api.product.ProductApi;
 import pl.edu.wszib.api.product.ProductResult;
-import pl.edu.wszib.infrastructure.product.InMemoryProductRepository;
 
 import java.util.UUID;
 

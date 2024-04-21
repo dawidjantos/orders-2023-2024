@@ -3,9 +3,8 @@ package pl.edu.wszib.application.order;
 import org.junit.jupiter.api.Test;
 import pl.edu.wszib.api.order.OrderApi;
 import pl.edu.wszib.api.order.OrderResult;
+import pl.edu.wszib.application.product.InMemoryProductRepository;
 import pl.edu.wszib.application.product.ProductFacade;
-import pl.edu.wszib.infrastructure.order.InMemoryOrderRepository;
-import pl.edu.wszib.infrastructure.product.InMemoryProductRepository;
 
 import java.time.Clock;
 
