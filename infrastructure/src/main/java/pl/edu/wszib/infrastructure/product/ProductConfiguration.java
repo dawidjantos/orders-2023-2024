@@ -2,6 +2,7 @@ package pl.edu.wszib.infrastructure.product;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import pl.edu.wszib.application.product.ProductFacade;
 import pl.edu.wszib.application.product.ProductRepository;
 
@@ -18,6 +19,8 @@ public class ProductConfiguration {
         return new InMemoryProductRepository();
     }
 
+    @Profile("!prod")
+//    @Profile("dev")
     @Bean
     ProductInitData productInitData(final ProductFacade productFacade) {
         return new ProductInitData(productFacade);
