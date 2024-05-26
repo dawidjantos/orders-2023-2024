@@ -47,3 +47,17 @@ Produkt:
 - infrastructure (api, application)
 - runner (api, application, infrastructure)
 - cli
+
+## Database
+
+ORDER_ENTITY
+- id 
+- amount
+- created_at
+- updated_at
+
+ORDER_LINE_ENTITY
+- product_id
+- quantity
+- amount
+- order_id
