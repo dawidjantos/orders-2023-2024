@@ -4,6 +4,10 @@ spring:
   h2:
     console:
       enabled: on
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 logging:
   level:
     pl.edu.wszib: DEBUG

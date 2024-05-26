@@ -14,9 +14,14 @@ public class ProductConfiguration {
         return new ProductFacade(productRepository);
     }
 
+//    @Bean
+//    ProductRepository productRepository() {
+//        return new InMemoryProductRepository();
+//    }
+
     @Bean
-    ProductRepository productRepository() {
-        return new InMemoryProductRepository();
+    ProductRepository springDataJpaProductRepository(final SpringDataJpaProductDao productDao) {
+        return new SpringDataJpaProductRepository(productDao);
     }
 
     @Profile("!prod")

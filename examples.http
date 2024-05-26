@@ -13,7 +13,7 @@ Accept: application/json
 {
   "id": "5f40cc2e-ff5e-4f30-a767-943b3a268e68",
   "name": "Testowy produkt 3",
-  "price": 10,
+  "price": 20.5,
   "createdAt": "2024-04-21T14:01:33.658280500Z",
   "updatedAt": "2024-04-21T14:01:33.658280500Z"
 }
