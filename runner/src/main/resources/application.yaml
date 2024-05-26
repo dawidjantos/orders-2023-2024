@@ -5,4 +5,5 @@ logging:
   level:
     pl.edu.wszib: DEBUG
 springdoc:
+
   packages-to-scan: pl.edu.wszib.infrastructure.product
