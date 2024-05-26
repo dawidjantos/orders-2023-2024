@@ -17,3 +17,11 @@ Accept: application/json
   "createdAt": "2024-04-21T14:01:33.658280500Z",
   "updatedAt": "2024-04-21T14:01:33.658280500Z"
 }
+
+### Create order
+POST http://localhost:8080/orders
+Accept: application/json
+
+### Get order by id
+GET http://localhost:8080/orders/7d42a836-b260-4601-a92a-25908125f30d
+Accept: application/json
