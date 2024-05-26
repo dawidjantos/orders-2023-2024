@@ -24,13 +24,9 @@ public class OrderEndpoint {
     @GetMapping("/{orderId}")
     public ResponseEntity<?> getOrder(@PathVariable final String orderId) {
         OrderResult result = orderFacade.getById(orderId);
-//        return switch (result) {
-//            case OrderResult.SuccessOrderResult success ->
-//        }
-        if (result.isSuccess()) {
-            return ResponseEntity.ok(result.success());
-        } else {
-            return new ResponseEntity<>(result, HttpStatus.NOT_FOUND);
-        }
+        return switch (result) {
+            case OrderResult.SuccessOrderResult success -> ResponseEntity.ok(success);
+            case OrderResult.FailureOrderResult failure -> new ResponseEntity<>(failure, HttpStatus.NOT_FOUND);
+        };
     }
 }
