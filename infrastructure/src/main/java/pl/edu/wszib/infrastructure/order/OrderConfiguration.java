@@ -24,8 +24,13 @@ public class OrderConfiguration {
         return new UUIDOrderIdProvider();
     }
 
+//    @Bean
+//    OrderRepository orderRepository() {
+//        return new InMemoryOrderRepository();
+//    }
+
     @Bean
-    OrderRepository orderRepository() {
-        return new InMemoryOrderRepository();
+    OrderRepository orderRepository(SpringDataJpaOrderDao orderDao) {
+        return new SpringDataJpaOrderRepository(orderDao);
     }
 }

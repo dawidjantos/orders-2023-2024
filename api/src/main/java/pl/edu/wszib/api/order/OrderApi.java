@@ -8,6 +8,7 @@ import java.time.Instant;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public record OrderApi(
@@ -70,7 +71,7 @@ public record OrderApi(
         final Set<OrderLineApi> changedLines = new HashSet<>();
         changedLines.addAll(lines);
         final BigDecimal lineAmount = product.price().multiply(BigDecimal.valueOf(quantity));
-        changedLines.add(new OrderLineApi(product, quantity, lineAmount));
+        changedLines.add(new OrderLineApi(UUID.randomUUID().toString(), product, quantity, lineAmount));
 
         final BigDecimal changedAmount = changedLines.stream()
                 .map(OrderLineApi::amount)
