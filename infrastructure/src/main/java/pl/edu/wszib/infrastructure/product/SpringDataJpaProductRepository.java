@@ -5,6 +5,8 @@ import pl.edu.wszib.application.product.ProductRepository;
 
 import java.util.Collection;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class SpringDataJpaProductRepository implements ProductRepository {
     private final SpringDataJpaProductDao productDao;
@@ -41,6 +43,14 @@ public class SpringDataJpaProductRepository implements ProductRepository {
         return productDao.findAll().stream()
                 .map(SpringDataJpaProductRepository::toApi)
                 .toList();
+    }
+
+    @Override
+    public Set<ProductApi> findByIds(Set<String> productIds) {
+        return productDao.findAllById(productIds)
+                .stream()
+                .map(SpringDataJpaProductRepository::toApi)
+                .collect(Collectors.toSet());
     }
 
     private static ProductApi toApi(ProductEntity product) {

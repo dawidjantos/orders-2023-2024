@@ -40,6 +40,10 @@ public class OrderLineEntity {
         this.order = order;
     }
 
+    public String getId() {
+        return id;
+    }
+
     public String getProductId() {
         return productId;
     }

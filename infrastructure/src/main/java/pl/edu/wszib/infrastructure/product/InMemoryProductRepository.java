@@ -28,4 +28,9 @@ public class InMemoryProductRepository implements ProductRepository {
     public Collection<ProductApi> findAll() {
         return products.values();
     }
+
+    @Override
+    public Set<ProductApi> findByIds(Set<String> productIds) {
+        throw new IllegalStateException("Not implemented yet");
+    }
 }

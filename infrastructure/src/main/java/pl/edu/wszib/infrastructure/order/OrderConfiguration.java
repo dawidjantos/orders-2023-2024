@@ -7,6 +7,7 @@ import pl.edu.wszib.application.order.OrderFacade;
 import pl.edu.wszib.application.order.OrderIdProvider;
 import pl.edu.wszib.application.order.OrderRepository;
 import pl.edu.wszib.application.order.UUIDOrderIdProvider;
+import pl.edu.wszib.application.product.ProductRepository;
 
 import java.time.Clock;
 
@@ -30,7 +31,8 @@ public class OrderConfiguration {
 //    }
 
     @Bean
-    OrderRepository orderRepository(SpringDataJpaOrderDao orderDao) {
-        return new SpringDataJpaOrderRepository(orderDao);
+    OrderRepository orderRepository(SpringDataJpaOrderDao orderDao,
+                                    ProductRepository productRepository) {
+        return new SpringDataJpaOrderRepository(orderDao, productRepository);
     }
 }

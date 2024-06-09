@@ -4,6 +4,7 @@ import pl.edu.wszib.api.product.ProductApi;
 
 import java.util.Collection;
 import java.util.Optional;
+import java.util.Set;
 
 public interface ProductRepository {
     ProductApi save(ProductApi productApi);
@@ -13,4 +14,6 @@ public interface ProductRepository {
     boolean existsById(String id);
 
     Collection<ProductApi> findAll();
+
+    Set<ProductApi> findByIds(Set<String> productIds);
 }
