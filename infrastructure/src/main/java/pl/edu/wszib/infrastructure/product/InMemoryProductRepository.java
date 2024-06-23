@@ -33,11 +33,6 @@ public class InMemoryProductRepository implements ProductRepository {
 
     @Override
     public Set<ProductApi> findByIds(Set<String> productIds) {
-        RestTemplate restTemplate;
-
-        RestClient restClient = null;
-
-        RestClient.ResponseSpec retrieve = restClient.get("localhost:8080").header("Test", "test").retrieve();
         throw new IllegalStateException("Not implemented yet");
     }
 }
